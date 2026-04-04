@@ -31,11 +31,10 @@ jobs:
           RUNTIME_TAG=$(yq '.runtime.image.tag' charts/openhands/values.yaml)
 
           # Build the image list as JSON array
+          # Only scan runtime-api to test alert closure without cross-image deduplication
           IMAGES=$(jq -n -c \
             --arg runtime_api "openhands/runtime-api:${RUNTIME_API_TAG}" \
-            --arg enterprise "openhands/enterprise-server:${ENTERPRISE_TAG}" \
-            --arg runtime "openhands/runtime:${RUNTIME_TAG}" \
-            '[$runtime_api, $enterprise, $runtime]')
+            '[$runtime_api]')
 
           echo "images=${IMAGES}" >> $GITHUB_OUTPUT
           echo "Discovered images: ${IMAGES}"
