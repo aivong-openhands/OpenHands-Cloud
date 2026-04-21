@@ -32,4 +32,5 @@ Example prompt: "To set up Laminar tracing, I need: 1) Your Laminar API key (LMN
 - `references/quickstart-python.md` - Python demo with standard Laminar SDK (requires gRPC)
 - `references/quickstart-node.md` - Node/JS demo with standard Laminar SDK (requires gRPC)
 - `references/http-only.md` - HTTP-only approach for self-hosted without gRPC
+- `references/grpc-vs-http.md` - Performance comparison and when to use each approach
 - `references/troubleshooting.md` - Common failures and fast fixes
